@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/julienschmidt/httprouter"
+	"github.com/study-hary-id/url-shortening-web/handlers"
 )
 
 func main() {
@@ -16,7 +17,7 @@ func main() {
 	)
 
 	// GET / <root> show home page of the url-shortening-web.
-	//router.GET("/", homePageHandler)
+	router.GET("/", handlers.HomePageHandler)
 
 	// GET /shortener show shortened URL and the metadata.
 	//router.GET("/shortener", shortenerHandler)
@@ -26,6 +27,9 @@ func main() {
 
 	// GET /:url redirect to a shorten URL.
 	//router.GET("/:url", getRedirectHandler)
+
+	// GET /* <wildcard> visit all unknown routes.
+	router.NotFound = http.HandlerFunc(handlers.NotFoundHandler)
 
 	s := &http.Server{
 		Addr:         PORT,
