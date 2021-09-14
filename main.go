@@ -19,11 +19,8 @@ func main() {
 	// GET / <root> show home page of the url-shortening-web.
 	router.GET("/", handlers.HomePageHandler)
 
-	// GET /shortener show shortened URL and the metadata.
-	//router.GET("/shortener", shortenerHandler)
-
-	// POST /new create a shorten URL.
-	router.POST("/new", handlers.NewURLHandler)
+	// GET /shortener create a shorten URL and show it in the web.
+	router.POST("/shortener", handlers.ShortenerHandler)
 
 	// GET /:url redirect to a shorten URL.
 	//router.GET("/:url", getRedirectHandler)
