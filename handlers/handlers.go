@@ -18,6 +18,11 @@ func HomePageHandler(w http.ResponseWriter, _ *http.Request, _ httprouter.Params
 	}
 }
 
+// NewURLHandler
+func NewURLHandler(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
+
+}
+
 // NotFoundHandler serves html and render 404 Page Not Found to unknown routes.
 func NotFoundHandler(w http.ResponseWriter, _ *http.Request) {
 	w.WriteHeader(http.StatusNotFound)
