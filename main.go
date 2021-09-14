@@ -23,7 +23,7 @@ func main() {
 	//router.GET("/shortener", shortenerHandler)
 
 	// POST /new create a shorten URL.
-	//router.POST("/new", newURLHandler)
+	router.POST("/new", handlers.NewURLHandler)
 
 	// GET /:url redirect to a shorten URL.
 	//router.GET("/:url", getRedirectHandler)
